@@ -32,6 +32,11 @@ app.use(limiter);
 
 app.use("/api/notes", notesRoutes); 
 
+app.get("/", (req, res) => {
+  res.send("Welcome to the Thinkboard API!");
+});
+
+
 connectDB().then(()=>{
     app.listen(5001, () => {
         console.log("Server is running on PORT",PORT);
